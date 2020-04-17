@@ -5,7 +5,7 @@
     "cdk-test": "bin/cdk-test.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc; env GOARCH=amd64 GOOS=linux go build -o build/TestFunc ./lambda/TestFunc",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk"
@@ -21,7 +21,8 @@
     "typescript": "~3.7.2"
   },
   "dependencies": {
-    "@aws-cdk/core": "1.32.2",
+    "@aws-cdk/aws-lambda": "^1.33.0",
+    "@aws-cdk/core": "^1.33.0",
     "source-map-support": "^0.5.16"
   }
 }
